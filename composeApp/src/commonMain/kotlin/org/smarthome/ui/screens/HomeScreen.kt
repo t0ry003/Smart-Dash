@@ -1,5 +1,6 @@
 package org.smarthome.ui.screens
 
+import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -22,10 +23,15 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 
 @Composable
+@Preview
 fun HomeScreen() {
     var selectedTab by remember { mutableStateOf(0) }
     var showAddDeviceDialog by remember { mutableStateOf(false) }
     var devices by remember { mutableStateOf<List<Device>>(emptyList()) }
+
+    devices = listOf(
+        Device("Living Room Light", "192.168.1.1")
+    )
 
     Scaffold(
         floatingActionButton = {
@@ -104,7 +110,6 @@ fun HomeContent(innerPadding: PaddingValues, devices: List<Device>, onAddDevice:
                         text = "No devices available.",
                         fontSize = 18.sp,
                         color = Color.White,
-                        modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center
                     )
                 }
@@ -193,7 +198,7 @@ fun DeviceCard(device: Device) {
 
     Card(
         modifier = Modifier
-            .size(120.dp)
+            .size(150.dp)
             .padding(4.dp),
         shape = RoundedCornerShape(8.dp),
         backgroundColor = Color(0xFF2C2C2C)
@@ -201,22 +206,25 @@ fun DeviceCard(device: Device) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(8.dp),
+                .padding(12.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
                 text = device.name,
                 fontSize = 14.sp,
                 color = Color.White
             )
             Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
                 text = device.ip,
-                fontSize = 10.sp,
+                fontSize = 12.sp,
                 color = Color(0xFFAAAAAA)
             )
             Switch(
                 checked = isOn,
                 onCheckedChange = { isOn = it },
+                modifier = Modifier.align(Alignment.CenterHorizontally),
                 colors = SwitchDefaults.colors(
                     checkedThumbColor = Color.Green,
                     uncheckedThumbColor = Color.Gray,
