@@ -29,10 +29,6 @@ fun HomeScreen() {
     var showAddDeviceDialog by remember { mutableStateOf(false) }
     var devices by remember { mutableStateOf<List<Device>>(emptyList()) }
 
-    devices = listOf(
-        Device("Living Room Light", "192.168.1.1")
-    )
-
     Scaffold(
         floatingActionButton = {
             if (selectedTab == 0) {
