@@ -18,9 +18,9 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     jvm("desktop")
-    
+
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         moduleName = "composeApp"
@@ -40,10 +40,10 @@ kotlin {
         }
         binaries.executable()
     }
-    
+
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -71,7 +71,7 @@ android {
 
     defaultConfig {
         applicationId = "org.smarthome"
-        minSdk = libs.versions.android.minSdk.get().toInt()
+        minSdk = 25
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
@@ -93,6 +93,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.ui.text.android)
+    implementation(libs.androidx.ui.tooling.preview.android)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.ui.android)
     debugImplementation(compose.uiTooling)
 }
 
