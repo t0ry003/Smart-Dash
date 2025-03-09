@@ -41,7 +41,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF121212))
+            .background(Color(48, 71, 94))
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -50,7 +50,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
         Text(
             text = "Smart-Dash",
             fontSize = 32.sp,
-            color = Color.White,
+            color = Color(231, 222, 200),
             modifier = Modifier.padding(bottom = 24.dp)
         )
 
@@ -63,10 +63,10 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             modifier = Modifier
                 .width(280.dp),
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                textColor = Color.White,
-                cursorColor = Color.White,
-                focusedBorderColor = Color(0xFFBBBBBB),
-                unfocusedBorderColor = Color(0xFF666666)
+                textColor = Color(231, 222, 200),
+                cursorColor = Color(231, 222, 200),
+                focusedBorderColor = Color(203, 175, 135),
+                unfocusedBorderColor = Color(231, 222, 200)
             )
         )
 
@@ -82,10 +82,10 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             modifier = Modifier
                 .width(280.dp),
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                textColor = Color.White,
-                cursorColor = Color.White,
-                focusedBorderColor = Color(0xFFBBBBBB),
-                unfocusedBorderColor = Color(0xFF666666)
+                textColor = Color(231, 222, 200),
+                cursorColor = Color(231, 222, 200),
+                focusedBorderColor = Color(203, 175, 135),
+                unfocusedBorderColor = Color(231, 222, 200)
             )
         )
 
@@ -104,7 +104,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
                 .width(280.dp)
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color(0xFF0D47A1)
+                backgroundColor = Color(126, 138, 151)
             ),
             shape = RoundedCornerShape(8.dp),
             enabled = !isLoading
@@ -112,11 +112,11 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             if (isLoading) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(24.dp),
-                    color = Color.White,
+                    color = Color(231, 222, 200),
                     strokeWidth = 2.dp
                 )
             } else {
-                Text("Login", color = Color.White)
+                Text("Login", color = Color(231, 222, 200))
             }
         }
 

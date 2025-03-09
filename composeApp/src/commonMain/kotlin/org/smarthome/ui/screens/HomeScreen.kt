@@ -34,7 +34,7 @@ fun HomeScreen() {
             if (selectedTab == 0) {
                 FloatingActionButton(
                     onClick = { showAddDeviceDialog = true },
-                    backgroundColor = Color(0xFF0D47A1)
+                    backgroundColor = Color(126, 138, 151)
                 ) {
                     Icon(Icons.Filled.Add, contentDescription = "Add Device")
                 }
@@ -42,8 +42,8 @@ fun HomeScreen() {
         },
         bottomBar = {
             BottomNavigation(
-                backgroundColor = Color(0xFF1C1C1C),
-                contentColor = Color.White
+                backgroundColor = Color(231, 222, 200),
+                contentColor = Color(48, 71, 94)
             ) {
                 BottomNavigationItem(
                     icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
@@ -94,7 +94,7 @@ fun HomeContent(innerPadding: PaddingValues, devices: List<Device>, onAddDevice:
         modifier = Modifier
             .fillMaxSize()
             .padding(innerPadding)
-            .background(Color.Black)
+            .background(Color(48, 71, 94))
     ) {
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
